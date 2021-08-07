@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ComposeDemoApp</string>
+    <string name="go_to_list">Go To List</string>
 </resources>

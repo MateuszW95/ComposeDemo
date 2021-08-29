@@ -1,5 +1,5 @@
 # ComposeDemo
-Jetpack Compose Demo App
+Jetpack Compose Demo App (Clean Architecture, Hilt, MVVM)
 
 ## References:
 

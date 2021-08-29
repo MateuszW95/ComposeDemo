@@ -1,10 +1,16 @@
 package com.mwdev.composedemoapp.ui.main
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.mwdev.composedemoapp.ui.member.LandingScreen
+import com.mwdev.composedemoapp.ui.person_list.PersonListScreen
+import com.mwdev.composedemoapp.ui.person_list.PersonViewModel
+import dagger.hilt.android.internal.lifecycle.HiltViewModelFactory
 
 @Composable
 fun Navigation() {
@@ -16,21 +22,9 @@ fun Navigation() {
         composable(Screen.LandingScreen.route) {
             LandingScreen(navigation = navController)
         }
-//        composable(
-//            route = Screen.RecipeDetail.route + "/{recipeId}",
-//            arguments = listOf(navArgument("recipeId") {
-//                type = NavType.IntType
-//            })
-//        ) { navBackStackEntry ->
-//            val factory = HiltViewModelFactory(LocalContext.current, navBackStackEntry)
-//            val viewModel: RecipeViewModel = viewModel("RecipeDetailViewModel", factory)
-//            RecipeDetailScreen(
-//                isDarkTheme = settingsDataStore.isDark.value,
-//                isNetworkAvailable = connectivityManager.isNetworkAvailable.value,
-//                recipeId = navBackStackEntry.arguments?.getInt("recipeId"),
-//                viewModel = viewModel,
-//            )
-//        }
-//    }
+        composable(route = Screen.PersonListScreen.route) {
+            val viewModel: PersonViewModel= hiltViewModel()
+            PersonListScreen(navController = navController, viewModel = viewModel)
+        }
     }
 }

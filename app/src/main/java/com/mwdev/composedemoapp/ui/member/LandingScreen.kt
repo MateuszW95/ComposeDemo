@@ -78,7 +78,6 @@ fun FullButton(text: String, onClickAction: () -> Unit) {
         ),
         shape = RoundedCornerShape(percent = 50),
         modifier = Modifier
-            .shadow(0.1.dp, RoundedCornerShape(percent = 50))
             .padding(5.dp)
     ) {
         Text(

@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.mwdev.composedemoapp.ui.member.LandingScreen
 import com.mwdev.composedemoapp.ui.person_list.PersonListScreen
 import com.mwdev.composedemoapp.ui.person_list.PersonViewModel
+import com.mwdev.composedemoapp.ui.shapes.ShapeScreen
 import dagger.hilt.android.internal.lifecycle.HiltViewModelFactory
 
 @Composable
@@ -25,6 +26,9 @@ fun Navigation() {
         composable(route = Screen.PersonListScreen.route) {
             val viewModel: PersonViewModel= hiltViewModel()
             PersonListScreen(navController = navController, viewModel = viewModel)
+        }
+        composable(route = Screen.ShapeScreen.route) {
+            ShapeScreen(navController = navController)
         }
     }
 }

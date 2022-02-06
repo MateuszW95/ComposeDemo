@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -15,6 +17,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "MOCK_BASE_API_URL", "\"https://run.mocky.io/\""
+
     }
 
     buildTypes {
@@ -73,10 +78,23 @@ dependencies {
     implementation "androidx.compose.runtime:runtime-rxjava2:$compose_version"
     // Navigation compose
     implementation "androidx.navigation:navigation-compose:2.5.0-alpha01"
-
     //pager
     def pager_version="0.24.1-alpha"
-    implementation "com.google.accompanist:accompanist-pager:$pager_version"
+    implementation "com.google.accompanist:accompanist-pager:$pager_version"    //DI Hilt
+    implementation "com.google.dagger:hilt-android:2.38.1"
+    kapt "com.google.dagger:hilt-compiler:2.38.1"
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0-alpha03'
+
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
+
+    //Standardized response interface from the network response
+    implementation "com.github.skydoves:sandwich:1.2.1"
+
 
     implementation("io.coil-kt:coil-compose:1.3.1")
 

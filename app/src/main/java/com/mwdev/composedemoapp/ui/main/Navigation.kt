@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.mwdev.composedemoapp.ui.calendar.CalendarScreen
 import com.mwdev.composedemoapp.ui.member.LandingScreen
 
 @Composable
@@ -15,6 +16,9 @@ fun Navigation() {
         }
         composable(Screen.LandingScreen.route) {
             LandingScreen(navigation = navController)
+        }
+        composable(Screen.CalendarScreen.route) {
+            CalendarScreen(navigation = navController)
         }
     }
 }

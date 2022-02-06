@@ -3,4 +3,5 @@
     <string name="go_to_list">Go To List</string>
     <string name="sign_In">Sign In</string>
     <string name="go_to_landing">Go To Landing</string>
+    <string name="go_to_calendar">Go to calendar</string>
 </resources>

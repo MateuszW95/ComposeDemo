@@ -55,6 +55,21 @@ fun MainScreen(navController: NavController) {
                 color = Color.White
             )
         }
+        Spacer(modifier = Modifier.size(0.dp, 10.dp))
+        Button(
+            onClick = {
+                navController.navigate(Screen.CalendarScreen.route)
+            },
+            colors = ButtonDefaults.textButtonColors(
+                backgroundColor = Color.Red,
+            ),
+            shape = RoundedCornerShape(10.dp)
+        ) {
+            Text(
+                text = stringResource(id = R.string.go_to_calendar),
+                color = Color.White
+            )
+        }
     }
 }
 
